@@ -1,2 +1,3 @@
-# Student_information_system
- 
+# Not Ready I'm still coding
+Turkish:  
+v1.0: Öğrenci bilgi sistemi C# ile kodlandı içerisinde MySql kullanıldı. Admin paneli üzerinden öğrenci, öğretmen, admin, ders, bölüm, sınıf ve not eklenebiliyor bütün veri tabanları ilişkili bir şekillde kullanılıyor öğrenci eklendiği zaman kullanıcı girişi yapabilmesi için kullanıcı olarakda otomatik olarak ekleniyor kullanıcı panelinden bir kişi silindiğinde otomatik olarak o kişi siliniyor. Proje şuan tam anlamıyla bitmedi admin paneli %80 gibi bir oranda bitti, öğrenci formu %10 gibi bir oranla bitti, öğretmen formu daha yapılmadı, hataya yol açabilecek girişler denetlenmedi. projenin tamamı 06.01.2021 tarihine kadar eklenecektir.
