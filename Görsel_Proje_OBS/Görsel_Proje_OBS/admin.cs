@@ -298,7 +298,7 @@ namespace Görsel_Proje_OBS
         public int bolum_id_bul(ComboBox x)
         {
             int bolum_id = 0;
-            
+
             MySqlCommand sql = new MySqlCommand("Select bolum_no from bolum where bolum_ad=@ad", baglan);
             sql.Parameters.AddWithValue("@ad", x.Text);
             MySqlDataReader dr = sql.ExecuteReader();
@@ -307,7 +307,7 @@ namespace Görsel_Proje_OBS
                 bolum_id = int.Parse(dr["bolum_no"].ToString());
             }
             dr.Close();
-            
+
             return bolum_id;
         }
         public void sinif_ekle(TextBox sinif_ad, ComboBox sinif_bolum)
@@ -319,7 +319,7 @@ namespace Görsel_Proje_OBS
             sql.Parameters.AddWithValue("@sinif_ad", sinif_ad.Text);
             sql.Parameters.AddWithValue("@bolum_no", bolum_id_bul(cb_sinif_bolum));
             sql.ExecuteNonQuery();
-            
+
             baglan.Close();
         }
         public void sinif_sil(String x)
@@ -340,34 +340,35 @@ namespace Görsel_Proje_OBS
         {
             cb_ders_ogretmen.Items.Clear();
             baglan.Open();
-            MySqlCommand sql = new MySqlCommand("Select ogrt_isim,ogrt_soyisim from ogrt_bilgi",baglan);
+            MySqlCommand sql = new MySqlCommand("Select ogrt_isim,ogrt_soyisim from ogrt_bilgi", baglan);
             MySqlDataReader dr = sql.ExecuteReader();
-            while (dr.Read()) 
+            while (dr.Read())
             {
-                cb_ders_ogretmen.Items.Add(dr["ogrt_isim"].ToString()+" "+ dr["ogrt_soyisim"].ToString());
+                cb_ders_ogretmen.Items.Add(dr["ogrt_isim"].ToString() + " " + dr["ogrt_soyisim"].ToString());
             }
             dr.Close();
             baglan.Close();
         }
-        public string ad="", soyad="";
+        public string ad = "", soyad = "";
+        public string ogr_ad = "", ogr_sad = "";
         public void ogrt_parcala(ComboBox x)
         {
-            ad = "";soyad = "";
-            int cursor=0;
+            ad = ""; soyad = "";
+            int cursor = 0;
             string isim = x.Text.ToString();
-            while (cursor!=-1)
+            while (cursor != -1)
             {
-                cursor = isim.IndexOf(" ",cursor);
-                if (cursor!=-1)
+                cursor = isim.IndexOf(" ", cursor);
+                if (cursor != -1)
                 {
-                    MessageBox.Show(isim.Substring(0, cursor));
+
                     ad += isim.Substring(0, cursor) + " ";
-                    ad = ad.Substring(0,ad.Length-1);
+                    ad = ad.Substring(0, ad.Length - 1);
                     isim = isim.Remove(0, cursor);
                 }
                 else
                 {
-                    MessageBox.Show(isim);
+
                     soyad = isim.Trim();
                     break;
                 }
@@ -388,7 +389,7 @@ namespace Görsel_Proje_OBS
         }
         public int ogrt_no_getir()
         {
-            MySqlDataReader dr=null;
+            MySqlDataReader dr = null;
             try
             {
                 baglan.Open();
@@ -398,7 +399,7 @@ namespace Görsel_Proje_OBS
                 sql.Parameters.AddWithValue("@soy", soyad);
                 dr = sql.ExecuteReader();
                 if (dr.Read())
-                {   
+                {
                     return int.Parse(dr["ogrt_no"].ToString());
                 }
                 else
@@ -419,37 +420,127 @@ namespace Görsel_Proje_OBS
                 baglan.Close();
             }
 
-            
-            
-            
+
+
+
         }
 
 
-        public void ders_ekle(TextBox ad,ComboBox sınıf,ComboBox ogrt)
+        public void ders_ekle(TextBox ad, ComboBox sınıf, ComboBox ogrt)
         {
             baglan.Open();
             MySqlCommand sql = new MySqlCommand("Insert into ders (ders_ad,ogrt_no,sinif_no) values (@ders,@ogrt,@sinif);", baglan);
             sql.Parameters.AddWithValue("@ders", ad.Text);
             sql.Parameters.AddWithValue("@ogrt", bolum_id_bul(ogrt));
-            sql.Parameters.AddWithValue("@sinif",sinif_no_getir(sınıf));
+            sql.Parameters.AddWithValue("@sinif", sinif_no_getir(sınıf));
             sql.ExecuteNonQuery();
             baglan.Close();
         }
-        
+
         public void ders_sil(int id)
         {
             baglan.Open();
 
-            MySqlCommand sql = new MySqlCommand("Delete from ders where ders_no=@id",baglan);
-            sql.Parameters.AddWithValue("@id",id);
+            MySqlCommand sql = new MySqlCommand("Delete from ders where ders_no=@id", baglan);
+            sql.Parameters.AddWithValue("@id", id);
             sql.ExecuteNonQuery();
 
             baglan.Close();
         }
         #endregion
-        
+
         #region"Not İşlemleri"
 
+        public void cb_ogrenci_getir(ComboBox c)
+        {
+            c.Items.Clear();
+            baglan.Open();
+
+            MySqlCommand sql = new MySqlCommand("select ogr_isim,ogr_soyisim from ogr_bilgi", baglan);
+            MySqlDataReader dr = sql.ExecuteReader();
+            while (dr.Read())
+            {
+                c.Items.Add(dr["ogr_isim"].ToString() + " " + dr["ogr_soyisim"].ToString());
+            }
+            dr.Close();
+
+            baglan.Close();
+        }
+        public void cb_ders_getir(ComboBox c)
+        {
+            c.Items.Clear();
+            baglan.Open();
+
+            MySqlCommand sql = new MySqlCommand("Select ders_ad from ders", baglan);
+            MySqlDataReader dr = sql.ExecuteReader();
+            while (dr.Read())
+            {
+                c.Items.Add(dr["ders_ad"]);
+            }
+            dr.Close();
+            baglan.Close();
+        }
+        public void ogr_ad_parcala(ComboBox c)
+        {
+            ogr_ad = ""; ogr_sad = "";
+            int cursor = 0;
+            string isim = c.Text.ToString();
+            while (cursor != -1)
+            {
+                cursor = isim.IndexOf(" ", cursor);
+                if (cursor != -1)
+                {
+                    ad += isim.Substring(0, cursor) + " ";
+                    ogr_ad = ad.Substring(0, ad.Length - 1);
+                    isim = isim.Remove(0, cursor);
+                }
+                else
+                {
+                    ogr_sad = isim.Trim();
+                    break;
+                }
+            }
+        }
+        public int ogr_no_getir()
+        {
+
+            int id = -1;
+            MySqlCommand sql = new MySqlCommand("Select ogr_no from ogr_bilgi where ogr_isim=@ad and ogr_soyisim=@sad", baglan);
+            sql.Parameters.AddWithValue("@ad", ogr_ad);
+            sql.Parameters.AddWithValue("@sad", ogr_sad);
+            MySqlDataReader dr = sql.ExecuteReader();
+            while (dr.Read())
+            {
+                id = int.Parse(dr["ogr_no"].ToString());
+            }
+            dr.Close();
+            return id;
+        }
+        public int ders_no_getir(ComboBox c)
+        {
+            int deger = -1;
+            MySqlCommand sql = new MySqlCommand("Select ders_no from ders where ders_ad=@ad", baglan);
+            sql.Parameters.AddWithValue("@ad", c.Text.ToString());
+            MySqlDataReader dr = sql.ExecuteReader();
+            while (dr.Read())
+            {
+                deger = int.Parse(dr["ders_no"].ToString());
+            }
+            dr.Close();
+            return deger;
+        }
+        public void not_ekle(TextBox not, ComboBox tur)
+        {
+            baglan.Open();
+
+            MySqlCommand sql = new MySqlCommand("Insert into not_bilgi (ogr_no,ders_no,not_not,not_tur) values (@ogr,@ders,@not,@ntur)", baglan);
+            sql.Parameters.AddWithValue("@ogr", ogr_no_getir());
+            sql.Parameters.AddWithValue("@ders", ders_no_getir(cb_not_ders));
+            sql.Parameters.AddWithValue("@not", not.Text.ToString());
+            sql.Parameters.AddWithValue("@ntur", tur.SelectedIndex);
+            sql.ExecuteNonQuery();
+            baglan.Close();
+        }
 
 
         #endregion
@@ -457,11 +548,11 @@ namespace Görsel_Proje_OBS
         #region"Buttonlar"
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
             if (panel_ogr.Visible == true)
             {
                 panel_ogr.Visible = false;
-                panel_ogr.Location = new Point(640,404);
+                panel_ogr.Location = new Point(640, 404);
                 dataGridView1.DataSource = null;
 
             }
@@ -472,15 +563,16 @@ namespace Görsel_Proje_OBS
                 panel_ders.Visible = false;
                 panel_ogrt.Visible = false;
                 panel_bolum.Visible = false;
+                panel_not.Visible = false;
                 panel_kullanici.Visible = false;
                 panel_ogr.Visible = true;
                 panel_sinif.Visible = false;
-                panel_ogr.Location = new Point(761, 13);
+                panel_ogr.Location = new Point(5, 6);
             }
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            
+
             if (panel_ogrt.Visible == true)
             {
                 panel_ogrt.Visible = false;
@@ -497,12 +589,12 @@ namespace Görsel_Proje_OBS
                 panel_kullanici.Visible = false;
                 panel_ogr.Visible = false;
                 panel_sinif.Visible = false;
-                panel_ogrt.Location = new Point(761, 13);
+                panel_ogrt.Location = new Point(5, 6);
             }
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
             if (panel_kullanici.Visible == true)
             {
                 dataGridView1.DataSource = null;
@@ -516,16 +608,17 @@ namespace Görsel_Proje_OBS
                 panel_ogrt.Visible = false;
                 panel_bolum.Visible = false;
                 panel_kullanici.Visible = true;
+                panel_not.Visible = false;
                 panel_ders.Visible = false;
                 panel_ogr.Visible = false;
                 panel_sinif.Visible = false;
-                panel_kullanici.Location = new Point(761, 13);
+                panel_kullanici.Location = new Point(5, 6);
             }
 
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             if (panel_bolum.Visible == true)
             {
                 panel_bolum.Visible = false;
@@ -538,11 +631,12 @@ namespace Görsel_Proje_OBS
                 bolum_getir();
                 panel_ogrt.Visible = false;
                 panel_ders.Visible = false;
+                panel_not.Visible = false;
                 panel_bolum.Visible = true;
                 panel_kullanici.Visible = false;
                 panel_ogr.Visible = false;
                 panel_sinif.Visible = false;
-                panel_bolum.Location = new Point(761, 13);
+                panel_bolum.Location = new Point(5, 6);
             }
 
         }
@@ -564,15 +658,37 @@ namespace Görsel_Proje_OBS
                 panel_ders.Visible = true;
                 panel_ogrt.Visible = false;
                 panel_bolum.Visible = false;
+                panel_not.Visible = false;
                 panel_kullanici.Visible = false;
                 panel_ogr.Visible = false;
                 panel_sinif.Visible = false;
-                panel_ders.Location = new Point(761, 13);
+                panel_ders.Location = new Point(5, 6);
             }
         }
         private void button7_Click(object sender, EventArgs e)
         {
-            not_getir();
+            if (panel_not.Visible == true)
+            {
+                dataGridView1.DataSource = null;
+                panel_not.Visible = false;
+                panel_not.Location = new Point(640, 404);
+
+            }
+            else
+            {
+                cb_ogrenci_getir(cb_not_ogr);
+                not_getir();
+                cb_ders_getir(cb_not_ders);
+
+                panel_ogrt.Visible = false;
+                panel_bolum.Visible = false;
+                panel_kullanici.Visible = false;
+                panel_ders.Visible = false;
+                panel_ogr.Visible = false;
+                panel_sinif.Visible = false;
+                panel_not.Visible = true;
+                panel_not.Location = new Point(5, 6);
+            }
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -588,12 +704,13 @@ namespace Görsel_Proje_OBS
                 sinif_getir();
                 bolum_doldur();
                 panel_ogrt.Visible = false;
+                panel_not.Visible = false;
                 panel_bolum.Visible = false;
                 panel_kullanici.Visible = false;
                 panel_ders.Visible = false;
                 panel_ogr.Visible = false;
                 panel_sinif.Visible = true;
-                panel_sinif.Location = new Point(761, 13);
+                panel_sinif.Location = new Point(5, 6);
             }
         }
         private void button_ogrt_ekle_Click(object sender, EventArgs e)
@@ -621,7 +738,7 @@ namespace Görsel_Proje_OBS
         }
         private void admin_Load(object sender, EventArgs e)
         {
-            
+
             bolum_doldur();
         }
         private void button12_Click(object sender, EventArgs e)
@@ -728,13 +845,51 @@ namespace Görsel_Proje_OBS
 
         private void button27_Click(object sender, EventArgs e)
         {
+            ogr_ad_parcala(cb_not_ogr);
+            not_ekle(tb_not_not, cb_not_tur);
+            not_getir();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            panel_sol.Width += 5;
+
+            if (panel_sol.Width >= 170)
+            {
+                timer1.Stop();
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            panel_sol.Width -= 5;
+            if (panel_sol.Width == 40)
+            {
+                timer2.Stop();
+            }
+        }
+
+        private void b1_Click(object sender, EventArgs e)
+        {
+            if (panel_sol.Width < 140)
+            {
+                timer1.Start();
+            }
+            else
+            {
+                timer2.Start();
+            }
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
 
         }
 
         private void button24_Click(object sender, EventArgs e)
         {
             ogrt_parcala(cb_ders_ogretmen);
-            ders_ekle(tb_ders_ad,cb_ders_sinif,cb_ders_ogretmen);
+            ders_ekle(tb_ders_ad, cb_ders_sinif, cb_ders_ogretmen);
             ders_getir();
         }
         #endregion

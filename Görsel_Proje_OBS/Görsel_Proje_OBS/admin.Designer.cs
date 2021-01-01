@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.b8 = new System.Windows.Forms.Button();
+            this.b7 = new System.Windows.Forms.Button();
+            this.b6 = new System.Windows.Forms.Button();
+            this.b5 = new System.Windows.Forms.Button();
+            this.b4 = new System.Windows.Forms.Button();
+            this.b2 = new System.Windows.Forms.Button();
+            this.b3 = new System.Windows.Forms.Button();
             this.panel_ogrt = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button_ogrt_guncelle = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@
             this.tb_ogrt_ad = new System.Windows.Forms.TextBox();
             this.tb_ogrt_tc = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button9 = new System.Windows.Forms.Button();
+            this.b1 = new System.Windows.Forms.Button();
             this.panel_ogr = new System.Windows.Forms.Panel();
             this.cb_ogr_sinif = new System.Windows.Forms.ComboBox();
             this.button12 = new System.Windows.Forms.Button();
@@ -110,19 +111,25 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.panel_not = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.tb_not_no = new System.Windows.Forms.TextBox();
-            this.tb_not_not = new System.Windows.Forms.TextBox();
+            this.cb_not_tur = new System.Windows.Forms.ComboBox();
+            this.cb_not_ders = new System.Windows.Forms.ComboBox();
+            this.cb_not_ogr = new System.Windows.Forms.ComboBox();
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
-            this.cb_not_ogr = new System.Windows.Forms.ComboBox();
-            this.cb_not_ders = new System.Windows.Forms.ComboBox();
-            this.cb_not_tur = new System.Windows.Forms.ComboBox();
+            this.tb_not_not = new System.Windows.Forms.TextBox();
+            this.tb_not_no = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.panel_sol = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_ogrt.SuspendLayout();
             this.panel_ogr.SuspendLayout();
@@ -131,86 +138,118 @@
             this.panel_sinif.SuspendLayout();
             this.panel_ders.SuspendLayout();
             this.panel_not.SuspendLayout();
+            this.panel_sol.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(131, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(620, 309);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // b8
             // 
-            this.button1.Location = new System.Drawing.Point(-2, -3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Bölüm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.b8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.b8.ForeColor = System.Drawing.Color.White;
+            this.b8.Location = new System.Drawing.Point(0, 120);
+            this.b8.Name = "b8";
+            this.b8.Size = new System.Drawing.Size(130, 30);
+            this.b8.TabIndex = 2;
+            this.b8.Text = "Bölüm";
+            this.b8.UseVisualStyleBackColor = true;
+            this.b8.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // b7
             // 
-            this.button2.Location = new System.Drawing.Point(-2, 27);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Ders";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.b7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.b7.ForeColor = System.Drawing.Color.White;
+            this.b7.Location = new System.Drawing.Point(0, 60);
+            this.b7.Name = "b7";
+            this.b7.Size = new System.Drawing.Size(130, 30);
+            this.b7.TabIndex = 3;
+            this.b7.Text = "Ders";
+            this.b7.UseVisualStyleBackColor = true;
+            this.b7.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // b6
             // 
-            this.button3.Location = new System.Drawing.Point(-2, 90);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 35);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Sınıf";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.b6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.b6.ForeColor = System.Drawing.Color.White;
+            this.b6.Location = new System.Drawing.Point(0, 0);
+            this.b6.Name = "b6";
+            this.b6.Size = new System.Drawing.Size(130, 30);
+            this.b6.TabIndex = 5;
+            this.b6.Text = "Sınıf";
+            this.b6.UseVisualStyleBackColor = true;
+            this.b6.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // b5
             // 
-            this.button4.Location = new System.Drawing.Point(-2, 120);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 35);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Öğrenci";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.b5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.b5.ForeColor = System.Drawing.Color.White;
+            this.b5.Location = new System.Drawing.Point(0, 30);
+            this.b5.Name = "b5";
+            this.b5.Size = new System.Drawing.Size(130, 30);
+            this.b5.TabIndex = 6;
+            this.b5.Text = "Öğrenci";
+            this.b5.UseVisualStyleBackColor = true;
+            this.b5.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // b4
             // 
-            this.button5.Location = new System.Drawing.Point(-2, 184);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 35);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Kullanici";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.b4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.b4.ForeColor = System.Drawing.Color.White;
+            this.b4.Location = new System.Drawing.Point(0, 90);
+            this.b4.Name = "b4";
+            this.b4.Size = new System.Drawing.Size(130, 30);
+            this.b4.TabIndex = 8;
+            this.b4.Text = "Kullanici";
+            this.b4.UseVisualStyleBackColor = true;
+            this.b4.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // b2
             // 
-            this.button6.Location = new System.Drawing.Point(-2, 151);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(107, 35);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Öğretmen";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.b2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.b2.ForeColor = System.Drawing.Color.White;
+            this.b2.Location = new System.Drawing.Point(0, 180);
+            this.b2.Name = "b2";
+            this.b2.Size = new System.Drawing.Size(130, 30);
+            this.b2.TabIndex = 7;
+            this.b2.Text = "Öğretmen";
+            this.b2.UseVisualStyleBackColor = true;
+            this.b2.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // b3
             // 
-            this.button7.Location = new System.Drawing.Point(-2, 60);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(107, 35);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Not";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.b3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.b3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.b3.ForeColor = System.Drawing.Color.White;
+            this.b3.Location = new System.Drawing.Point(0, 150);
+            this.b3.Name = "b3";
+            this.b3.Size = new System.Drawing.Size(130, 30);
+            this.b3.TabIndex = 4;
+            this.b3.Text = "Not";
+            this.b3.UseVisualStyleBackColor = true;
+            this.b3.Click += new System.EventHandler(this.button7_Click);
             // 
             // panel_ogrt
             // 
@@ -227,7 +266,7 @@
             this.panel_ogrt.Controls.Add(this.tb_ogrt_ad);
             this.panel_ogrt.Controls.Add(this.tb_ogrt_tc);
             this.panel_ogrt.Controls.Add(this.textBox1);
-            this.panel_ogrt.Location = new System.Drawing.Point(545, 327);
+            this.panel_ogrt.Location = new System.Drawing.Point(3, 312);
             this.panel_ogrt.Name = "panel_ogrt";
             this.panel_ogrt.Size = new System.Drawing.Size(224, 309);
             this.panel_ogrt.TabIndex = 2;
@@ -344,16 +383,20 @@
             this.textBox1.Size = new System.Drawing.Size(119, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // button9
+            // b1
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button9.Location = new System.Drawing.Point(102, -2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(23, 221);
-            this.button9.TabIndex = 3;
-            this.button9.Text = " =";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.UseVisualStyleBackColor = true;
+            this.b1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.b1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.b1.ForeColor = System.Drawing.Color.White;
+            this.b1.Location = new System.Drawing.Point(130, 0);
+            this.b1.Name = "b1";
+            this.b1.Size = new System.Drawing.Size(40, 340);
+            this.b1.TabIndex = 1;
+            this.b1.Text = " =";
+            this.b1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.b1.UseVisualStyleBackColor = true;
+            this.b1.Click += new System.EventHandler(this.b1_Click);
             // 
             // panel_ogr
             // 
@@ -372,7 +415,7 @@
             this.panel_ogr.Controls.Add(this.label8);
             this.panel_ogr.Controls.Add(this.label7);
             this.panel_ogr.Controls.Add(this.label6);
-            this.panel_ogr.Location = new System.Drawing.Point(775, 327);
+            this.panel_ogr.Location = new System.Drawing.Point(3, 317);
             this.panel_ogr.Name = "panel_ogr";
             this.panel_ogr.Size = new System.Drawing.Size(237, 307);
             this.panel_ogr.TabIndex = 4;
@@ -518,7 +561,7 @@
             this.panel_kullanici.Controls.Add(this.label14);
             this.panel_kullanici.Controls.Add(this.label13);
             this.panel_kullanici.Controls.Add(this.label12);
-            this.panel_kullanici.Location = new System.Drawing.Point(545, 642);
+            this.panel_kullanici.Location = new System.Drawing.Point(9, 246);
             this.panel_kullanici.Name = "panel_kullanici";
             this.panel_kullanici.Size = new System.Drawing.Size(237, 309);
             this.panel_kullanici.TabIndex = 5;
@@ -634,7 +677,7 @@
             this.panel_bolum.Controls.Add(this.tb_bolum_no);
             this.panel_bolum.Controls.Add(this.label17);
             this.panel_bolum.Controls.Add(this.label16);
-            this.panel_bolum.Location = new System.Drawing.Point(315, 327);
+            this.panel_bolum.Location = new System.Drawing.Point(3, 297);
             this.panel_bolum.Name = "panel_bolum";
             this.panel_bolum.Size = new System.Drawing.Size(224, 309);
             this.panel_bolum.TabIndex = 6;
@@ -713,7 +756,7 @@
             this.panel_sinif.Controls.Add(this.label19);
             this.panel_sinif.Controls.Add(this.tb_sinif_no);
             this.panel_sinif.Controls.Add(this.label18);
-            this.panel_sinif.Location = new System.Drawing.Point(85, 327);
+            this.panel_sinif.Location = new System.Drawing.Point(3, 282);
             this.panel_sinif.Name = "panel_sinif";
             this.panel_sinif.Size = new System.Drawing.Size(224, 309);
             this.panel_sinif.TabIndex = 7;
@@ -811,10 +854,11 @@
             this.panel_ders.Controls.Add(this.label23);
             this.panel_ders.Controls.Add(this.label22);
             this.panel_ders.Controls.Add(this.label21);
-            this.panel_ders.Location = new System.Drawing.Point(788, 642);
+            this.panel_ders.Location = new System.Drawing.Point(6, 268);
             this.panel_ders.Name = "panel_ders";
             this.panel_ders.Size = new System.Drawing.Size(255, 309);
             this.panel_ders.TabIndex = 8;
+            this.panel_ders.Visible = false;
             // 
             // button22
             // 
@@ -927,69 +971,42 @@
             this.panel_not.Controls.Add(this.label27);
             this.panel_not.Controls.Add(this.label26);
             this.panel_not.Controls.Add(this.label25);
-            this.panel_not.Location = new System.Drawing.Point(757, 12);
+            this.panel_not.Location = new System.Drawing.Point(5, 6);
             this.panel_not.Name = "panel_not";
             this.panel_not.Size = new System.Drawing.Size(256, 309);
             this.panel_not.TabIndex = 9;
+            this.panel_not.Visible = false;
             // 
-            // label25
+            // cb_not_tur
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(15, 26);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(39, 13);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Not no";
+            this.cb_not_tur.FormattingEnabled = true;
+            this.cb_not_tur.Items.AddRange(new object[] {
+            "Vize",
+            "Final",
+            "Proje"});
+            this.cb_not_tur.Location = new System.Drawing.Point(83, 129);
+            this.cb_not_tur.Name = "cb_not_tur";
+            this.cb_not_tur.Size = new System.Drawing.Size(159, 21);
+            this.cb_not_tur.TabIndex = 20;
             // 
-            // label26
+            // cb_not_ders
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(15, 52);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(47, 13);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "Öğrenci ";
+            this.cb_not_ders.FormattingEnabled = true;
+            this.cb_not_ders.Location = new System.Drawing.Point(83, 76);
+            this.cb_not_ders.Name = "cb_not_ders";
+            this.cb_not_ders.Size = new System.Drawing.Size(159, 21);
+            this.cb_not_ders.TabIndex = 19;
             // 
-            // label27
+            // cb_not_ogr
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(15, 79);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(29, 13);
-            this.label27.TabIndex = 2;
-            this.label27.Text = "Ders";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(15, 106);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(24, 13);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "Not";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(15, 132);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(45, 13);
-            this.label29.TabIndex = 4;
-            this.label29.Text = "Not türü";
-            // 
-            // tb_not_no
-            // 
-            this.tb_not_no.Location = new System.Drawing.Point(83, 23);
-            this.tb_not_no.Name = "tb_not_no";
-            this.tb_not_no.Size = new System.Drawing.Size(159, 20);
-            this.tb_not_no.TabIndex = 5;
-            // 
-            // tb_not_not
-            // 
-            this.tb_not_not.Location = new System.Drawing.Point(83, 103);
-            this.tb_not_not.Name = "tb_not_not";
-            this.tb_not_not.Size = new System.Drawing.Size(159, 20);
-            this.tb_not_not.TabIndex = 5;
+            this.cb_not_ogr.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_not_ogr.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_not_ogr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_not_ogr.FormattingEnabled = true;
+            this.cb_not_ogr.Location = new System.Drawing.Point(83, 49);
+            this.cb_not_ogr.Name = "cb_not_ogr";
+            this.cb_not_ogr.Size = new System.Drawing.Size(159, 21);
+            this.cb_not_ogr.TabIndex = 18;
             // 
             // button25
             // 
@@ -1008,6 +1025,7 @@
             this.button26.TabIndex = 16;
             this.button26.Text = "Güncelle";
             this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // button27
             // 
@@ -1019,55 +1037,136 @@
             this.button27.UseVisualStyleBackColor = true;
             this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
-            // cb_not_ogr
+            // tb_not_not
             // 
-            this.cb_not_ogr.FormattingEnabled = true;
-            this.cb_not_ogr.Location = new System.Drawing.Point(83, 49);
-            this.cb_not_ogr.Name = "cb_not_ogr";
-            this.cb_not_ogr.Size = new System.Drawing.Size(159, 21);
-            this.cb_not_ogr.TabIndex = 18;
+            this.tb_not_not.Location = new System.Drawing.Point(83, 103);
+            this.tb_not_not.Name = "tb_not_not";
+            this.tb_not_not.Size = new System.Drawing.Size(159, 20);
+            this.tb_not_not.TabIndex = 5;
             // 
-            // cb_not_ders
+            // tb_not_no
             // 
-            this.cb_not_ders.FormattingEnabled = true;
-            this.cb_not_ders.Location = new System.Drawing.Point(83, 76);
-            this.cb_not_ders.Name = "cb_not_ders";
-            this.cb_not_ders.Size = new System.Drawing.Size(159, 21);
-            this.cb_not_ders.TabIndex = 19;
+            this.tb_not_no.Location = new System.Drawing.Point(83, 23);
+            this.tb_not_no.Name = "tb_not_no";
+            this.tb_not_no.Size = new System.Drawing.Size(159, 20);
+            this.tb_not_no.TabIndex = 5;
             // 
-            // cb_not_tur
+            // label29
             // 
-            this.cb_not_tur.FormattingEnabled = true;
-            this.cb_not_tur.Items.AddRange(new object[] {
-            "Vize",
-            "Final",
-            "Proje"});
-            this.cb_not_tur.Location = new System.Drawing.Point(83, 129);
-            this.cb_not_tur.Name = "cb_not_tur";
-            this.cb_not_tur.Size = new System.Drawing.Size(159, 21);
-            this.cb_not_tur.TabIndex = 20;
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(15, 132);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(45, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Not türü";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(15, 106);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(24, 13);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Not";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(15, 79);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(29, 13);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Ders";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(15, 52);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(47, 13);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Öğrenci ";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(15, 26);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(39, 13);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Not no";
+            // 
+            // panel_sol
+            // 
+            this.panel_sol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panel_sol.Controls.Add(this.panel4);
+            this.panel_sol.Controls.Add(this.b1);
+            this.panel_sol.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_sol.Location = new System.Drawing.Point(0, 0);
+            this.panel_sol.Name = "panel_sol";
+            this.panel_sol.Size = new System.Drawing.Size(170, 340);
+            this.panel_sol.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(170, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(879, 340);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.panel_ogr);
+            this.panel3.Controls.Add(this.panel_ogrt);
+            this.panel3.Controls.Add(this.panel_bolum);
+            this.panel3.Controls.Add(this.panel_not);
+            this.panel3.Controls.Add(this.panel_sinif);
+            this.panel3.Controls.Add(this.panel_kullanici);
+            this.panel3.Controls.Add(this.panel_ders);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(776, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(273, 340);
+            this.panel3.TabIndex = 12;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.b2);
+            this.panel4.Controls.Add(this.b3);
+            this.panel4.Controls.Add(this.b8);
+            this.panel4.Controls.Add(this.b4);
+            this.panel4.Controls.Add(this.b7);
+            this.panel4.Controls.Add(this.b5);
+            this.panel4.Controls.Add(this.b6);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(130, 340);
+            this.panel4.TabIndex = 9;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 10;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 875);
-            this.Controls.Add(this.panel_not);
-            this.Controls.Add(this.panel_ders);
-            this.Controls.Add(this.panel_sinif);
-            this.Controls.Add(this.panel_bolum);
-            this.Controls.Add(this.panel_kullanici);
-            this.Controls.Add(this.panel_ogr);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.panel_ogrt);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1049, 340);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel_sol);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "admin";
             this.Text = "admin";
             this.Load += new System.EventHandler(this.admin_Load);
@@ -1086,6 +1185,10 @@
             this.panel_ders.PerformLayout();
             this.panel_not.ResumeLayout(false);
             this.panel_not.PerformLayout();
+            this.panel_sol.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1093,13 +1196,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button b1;
+        private System.Windows.Forms.Button b8;
+        private System.Windows.Forms.Button b7;
+        private System.Windows.Forms.Button b6;
+        private System.Windows.Forms.Button b5;
+        private System.Windows.Forms.Button b4;
+        private System.Windows.Forms.Button b2;
+        private System.Windows.Forms.Button b3;
         private System.Windows.Forms.Panel panel_ogrt;
         private System.Windows.Forms.Button button_ogrt_guncelle;
         private System.Windows.Forms.Button button_ogrt_ekle;
@@ -1114,7 +1218,7 @@
         private System.Windows.Forms.TextBox tb_ogrt_tc;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        
         private System.Windows.Forms.Panel panel_ogr;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
@@ -1187,5 +1291,11 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Panel panel_sol;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }

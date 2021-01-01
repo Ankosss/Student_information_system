@@ -18,8 +18,32 @@ namespace Görsel_Proje_OBS
             InitializeComponent();
         }
         MySqlConnection baglan = new MySqlConnection("Server=localhost;Database=obs;user='root';Pwd='Umitcan123!';");
-        public string ogr_no, ogr_tc, ogr_isim, ogr_soyisim, ogr_telefon;
-        int bg_srg;
+        public string ogr_no, ogr_tc,ogr_sif, ogr_isim, ogr_soyisim, ogr_telefon;
+        public void sifre_getir(TextBox sif)
+        {
+            baglan.Open();
+
+            MySqlCommand sql = new MySqlCommand("Select kul_sif from kul_bilgi where kul_tc=@tc",baglan);
+            sql.Parameters.AddWithValue("@tc",ogr_tc);
+            MySqlDataReader dr = sql.ExecuteReader();
+            while(dr.Read())
+            {
+                ogr_sif = dr["kul_sif"].ToString();
+                sif.Text = dr["kul_sif"].ToString();
+            }
+            dr.Close();
+            baglan.Close();
+        }
+        public void sifre_guncelle(TextBox sif)
+        {
+            baglan.Open();
+            MySqlCommand sql = new MySqlCommand("Update kul_bilgi SET kul_sif=@sif where kul_tc=@tc",baglan);
+            sql.Parameters.AddWithValue("@sif",sif.Text);
+            sql.Parameters.AddWithValue("@tc",ogr_tc);
+            sql.ExecuteNonQuery();
+
+            baglan.Close();
+        }
         public void guncelle()
         {
             baglan.Open();
@@ -48,20 +72,23 @@ namespace Görsel_Proje_OBS
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            if (bg_srg == 0)
+            if (panel3.Visible == false)
             {
+                panel3.Dock = DockStyle.Fill;
                 panel3.Visible = true;
-                bg_srg = 1;
+                sifre_getir(tb_sif);
+                tb_sif.Text = ogr_sif.ToString();
                 textBox1.Text = ogr_no;
                 textBox2.Text = ogr_tc;
                 textBox3.Text = ogr_isim;
                 textBox4.Text = ogr_soyisim;
                 textBox5.Text = ogr_telefon;
+                
             }
             else
             {
                 panel3.Visible = false;
-                bg_srg = 0;
+                panel3.Dock = DockStyle.None;
 
             }
         }
@@ -69,6 +96,7 @@ namespace Görsel_Proje_OBS
         {
             guncelle();
             bilgiler(ogr_tc);
+            sifre_guncelle(tb_sif);
             ad_tc_yazdır();
         }
         bool bilgiler(string tc)
@@ -100,6 +128,35 @@ namespace Görsel_Proje_OBS
                 login.Close();
                 baglan.Close();
                 return false;
+            }
+        }
+        public void not_getir()
+        {
+            baglan.Open();
+
+            MySqlCommand sql = new MySqlCommand("Select * from not_bilgi where ogr_no=@no",baglan);
+            sql.Parameters.AddWithValue("@no",ogr_no);
+            MySqlDataAdapter da = new MySqlDataAdapter(sql);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            baglan.Close();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+
+            if (panel_not.Visible == false)
+            {
+                panel_not.Dock = DockStyle.Fill;
+                panel_not.Visible = true;
+                not_getir();
+            }
+            else
+            {
+                panel_not.Visible = false;
+                panel_not.Dock = DockStyle.None;
+
             }
         }
 

@@ -43,10 +43,10 @@
             // 
             // tc_no
             // 
-            this.tc_no.Location = new System.Drawing.Point(105, 180);
+            this.tc_no.Location = new System.Drawing.Point(64, 176);
             this.tc_no.MaxLength = 11;
             this.tc_no.Name = "tc_no";
-            this.tc_no.Size = new System.Drawing.Size(140, 20);
+            this.tc_no.Size = new System.Drawing.Size(165, 20);
             this.tc_no.TabIndex = 0;
             // 
             // label1
@@ -54,18 +54,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 181);
+            this.label1.Location = new System.Drawing.Point(29, 177);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 15);
+            this.label1.Size = new System.Drawing.Size(28, 15);
             this.label1.TabIndex = 6;
-            this.label1.Text = "T.C. Numarası";
+            this.label1.Text = "T.C.";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(70, 207);
+            this.label2.Location = new System.Drawing.Point(29, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 15);
             this.label2.TabIndex = 3;
@@ -73,10 +73,10 @@
             // 
             // sif
             // 
-            this.sif.Location = new System.Drawing.Point(105, 206);
+            this.sif.Location = new System.Drawing.Point(64, 202);
             this.sif.Name = "sif";
             this.sif.PasswordChar = '*';
-            this.sif.Size = new System.Drawing.Size(140, 20);
+            this.sif.Size = new System.Drawing.Size(165, 20);
             this.sif.TabIndex = 1;
             // 
             // button1
@@ -84,7 +84,7 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(115, 299);
+            this.button1.Location = new System.Drawing.Point(103, 298);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -94,17 +94,17 @@
             // 
             // r_sayi
             // 
-            this.r_sayi.Location = new System.Drawing.Point(105, 232);
+            this.r_sayi.Location = new System.Drawing.Point(64, 228);
             this.r_sayi.Name = "r_sayi";
             this.r_sayi.ReadOnly = true;
-            this.r_sayi.Size = new System.Drawing.Size(85, 20);
+            this.r_sayi.Size = new System.Drawing.Size(80, 20);
             this.r_sayi.TabIndex = 5;
             // 
             // r_sayi_knt
             // 
-            this.r_sayi_knt.Location = new System.Drawing.Point(198, 232);
+            this.r_sayi_knt.Location = new System.Drawing.Point(157, 228);
             this.r_sayi_knt.Name = "r_sayi_knt";
-            this.r_sayi_knt.Size = new System.Drawing.Size(47, 20);
+            this.r_sayi_knt.Size = new System.Drawing.Size(72, 20);
             this.r_sayi_knt.TabIndex = 2;
             // 
             // label3
@@ -112,7 +112,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(102, 255);
+            this.label3.Location = new System.Drawing.Point(61, 251);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 15);
             this.label3.TabIndex = 7;
