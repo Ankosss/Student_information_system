@@ -1,7 +1,6 @@
 C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\bin\Debug\Görsel_Proje_OBS.exe.config
 C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\bin\Debug\Görsel_Proje_OBS.exe
 C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\bin\Debug\Görsel_Proje_OBS.pdb
-C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\obj\Debug\Görsel_Proje_OBS.csprojAssemblyReference.cache
 C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\obj\Debug\Görsel_Proje_OBS.Form1.resources
 C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\obj\Debug\Görsel_Proje_OBS.Properties.Resources.resources
 C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\obj\Debug\Görsel_Proje_OBS.csproj.GenerateResource.cache
@@ -25,3 +24,5 @@ C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\obj\Debug\Görsel_Proj
 C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\obj\Debug\Görsel_Proje_OBS.csproj.CopyComplete
 C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\obj\Debug\Görsel_Proje_OBS.ogrenci.resources
 C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\obj\Debug\Görsel_Proje_OBS.admin.resources
+C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\obj\Debug\Görsel_Proje_OBS.csprojAssemblyReference.cache
+C:\Users\asus\Desktop\Görsel_Proje_OBS\Görsel_Proje_OBS\obj\Debug\Görsel_Proje_OBS.ogretmen.resources

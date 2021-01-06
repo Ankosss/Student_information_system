@@ -83,6 +83,19 @@ namespace Görsel_Proje_OBS
             }
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked==true)
+            {
+                sif.PasswordChar = '*';
+                
+            }
+            else
+            {
+                sif.PasswordChar = '\0';
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             String rrs_knt = r_sayi_knt.Text.ToString();
@@ -106,6 +119,7 @@ namespace Görsel_Proje_OBS
 
                             
                             ogretmen ogrt = new ogretmen();
+                            ogrt.ogrt_tc = tcno;
                             ogrt.Show();
 
                             admin adm = new admin();
@@ -124,6 +138,7 @@ namespace Görsel_Proje_OBS
                         {
                             
                             ogretmen ogrt = new ogretmen();
+                            ogrt.ogrt_tc = tcno;
                             ogrt.Show();
                             this.Hide();
                         }

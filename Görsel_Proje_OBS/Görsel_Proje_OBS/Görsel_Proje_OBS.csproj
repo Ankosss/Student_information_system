@@ -83,6 +83,9 @@
     <EmbeddedResource Include="ogrenci.resx">
       <DependentUpon>ogrenci.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ogretmen.resx">
+      <DependentUpon>ogretmen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

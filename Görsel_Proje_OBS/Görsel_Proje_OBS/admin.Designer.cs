@@ -125,9 +125,9 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.panel_sol = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -139,14 +139,16 @@
             this.panel_ders.SuspendLayout();
             this.panel_not.SuspendLayout();
             this.panel_sol.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
@@ -266,7 +268,7 @@
             this.panel_ogrt.Controls.Add(this.tb_ogrt_ad);
             this.panel_ogrt.Controls.Add(this.tb_ogrt_tc);
             this.panel_ogrt.Controls.Add(this.textBox1);
-            this.panel_ogrt.Location = new System.Drawing.Point(3, 312);
+            this.panel_ogrt.Location = new System.Drawing.Point(28, 810);
             this.panel_ogrt.Name = "panel_ogrt";
             this.panel_ogrt.Size = new System.Drawing.Size(224, 309);
             this.panel_ogrt.TabIndex = 2;
@@ -391,7 +393,7 @@
             this.b1.ForeColor = System.Drawing.Color.White;
             this.b1.Location = new System.Drawing.Point(130, 0);
             this.b1.Name = "b1";
-            this.b1.Size = new System.Drawing.Size(40, 340);
+            this.b1.Size = new System.Drawing.Size(40, 334);
             this.b1.TabIndex = 1;
             this.b1.Text = " =";
             this.b1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -415,7 +417,7 @@
             this.panel_ogr.Controls.Add(this.label8);
             this.panel_ogr.Controls.Add(this.label7);
             this.panel_ogr.Controls.Add(this.label6);
-            this.panel_ogr.Location = new System.Drawing.Point(3, 317);
+            this.panel_ogr.Location = new System.Drawing.Point(34, 787);
             this.panel_ogr.Name = "panel_ogr";
             this.panel_ogr.Size = new System.Drawing.Size(237, 307);
             this.panel_ogr.TabIndex = 4;
@@ -561,7 +563,7 @@
             this.panel_kullanici.Controls.Add(this.label14);
             this.panel_kullanici.Controls.Add(this.label13);
             this.panel_kullanici.Controls.Add(this.label12);
-            this.panel_kullanici.Location = new System.Drawing.Point(9, 246);
+            this.panel_kullanici.Location = new System.Drawing.Point(15, 847);
             this.panel_kullanici.Name = "panel_kullanici";
             this.panel_kullanici.Size = new System.Drawing.Size(237, 309);
             this.panel_kullanici.TabIndex = 5;
@@ -677,7 +679,7 @@
             this.panel_bolum.Controls.Add(this.tb_bolum_no);
             this.panel_bolum.Controls.Add(this.label17);
             this.panel_bolum.Controls.Add(this.label16);
-            this.panel_bolum.Location = new System.Drawing.Point(3, 297);
+            this.panel_bolum.Location = new System.Drawing.Point(22, 828);
             this.panel_bolum.Name = "panel_bolum";
             this.panel_bolum.Size = new System.Drawing.Size(224, 309);
             this.panel_bolum.TabIndex = 6;
@@ -756,7 +758,7 @@
             this.panel_sinif.Controls.Add(this.label19);
             this.panel_sinif.Controls.Add(this.tb_sinif_no);
             this.panel_sinif.Controls.Add(this.label18);
-            this.panel_sinif.Location = new System.Drawing.Point(3, 282);
+            this.panel_sinif.Location = new System.Drawing.Point(9, 866);
             this.panel_sinif.Name = "panel_sinif";
             this.panel_sinif.Size = new System.Drawing.Size(224, 309);
             this.panel_sinif.TabIndex = 7;
@@ -854,7 +856,7 @@
             this.panel_ders.Controls.Add(this.label23);
             this.panel_ders.Controls.Add(this.label22);
             this.panel_ders.Controls.Add(this.label21);
-            this.panel_ders.Location = new System.Drawing.Point(6, 268);
+            this.panel_ders.Location = new System.Drawing.Point(8, 329);
             this.panel_ders.Name = "panel_ders";
             this.panel_ders.Size = new System.Drawing.Size(255, 309);
             this.panel_ders.TabIndex = 8;
@@ -1016,6 +1018,7 @@
             this.button25.TabIndex = 17;
             this.button25.Text = "Not Sil";
             this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // button26
             // 
@@ -1104,34 +1107,8 @@
             this.panel_sol.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_sol.Location = new System.Drawing.Point(0, 0);
             this.panel_sol.Name = "panel_sol";
-            this.panel_sol.Size = new System.Drawing.Size(170, 340);
+            this.panel_sol.Size = new System.Drawing.Size(170, 334);
             this.panel_sol.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(170, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(879, 340);
-            this.panel2.TabIndex = 11;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.panel_ogr);
-            this.panel3.Controls.Add(this.panel_ogrt);
-            this.panel3.Controls.Add(this.panel_bolum);
-            this.panel3.Controls.Add(this.panel_not);
-            this.panel3.Controls.Add(this.panel_sinif);
-            this.panel3.Controls.Add(this.panel_kullanici);
-            this.panel3.Controls.Add(this.panel_ders);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(776, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(273, 340);
-            this.panel3.TabIndex = 12;
             // 
             // panel4
             // 
@@ -1145,8 +1122,34 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(130, 340);
+            this.panel4.Size = new System.Drawing.Size(130, 334);
             this.panel4.TabIndex = 9;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(170, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(879, 334);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.panel_ogr);
+            this.panel3.Controls.Add(this.panel_ogrt);
+            this.panel3.Controls.Add(this.panel_bolum);
+            this.panel3.Controls.Add(this.panel_not);
+            this.panel3.Controls.Add(this.panel_kullanici);
+            this.panel3.Controls.Add(this.panel_ders);
+            this.panel3.Controls.Add(this.panel_sinif);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(776, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(273, 334);
+            this.panel3.TabIndex = 12;
             // 
             // timer1
             // 
@@ -1162,7 +1165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 340);
+            this.ClientSize = new System.Drawing.Size(1049, 334);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_sol);
@@ -1186,9 +1189,9 @@
             this.panel_not.ResumeLayout(false);
             this.panel_not.PerformLayout();
             this.panel_sol.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

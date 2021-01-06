@@ -18,7 +18,7 @@ namespace Görsel_Proje_OBS
             InitializeComponent();
         }
         MySqlConnection baglan = new MySqlConnection("Server=localhost;Database=obs;user='root';Pwd='Umitcan123!';");
-        public string ogr_no, ogr_tc,ogr_sif, ogr_isim, ogr_soyisim, ogr_telefon;
+        public string ogr_no, ogr_tc,ogr_sif, ogr_isim, ogr_soyisim, ogr_telefon,ogr_sinif;
         public void sifre_getir(TextBox sif)
         {
             baglan.Open();
@@ -58,6 +58,19 @@ namespace Görsel_Proje_OBS
             cmd.ExecuteNonQuery();
             baglan.Close();
         }
+        public void ders_program_getir()
+        {
+            baglan.Open();
+
+            MySqlCommand sql = new MySqlCommand("Select ders_ad as 'Ders Adı' from ders where sinif_no=@no", baglan);
+            sql.Parameters.AddWithValue("@no", ogr_sinif);
+            MySqlDataAdapter da = new MySqlDataAdapter(sql);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView2.DataSource = dt;
+
+            baglan.Close();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if (panel1.Width < 130)
@@ -76,6 +89,8 @@ namespace Görsel_Proje_OBS
             {
                 panel3.Dock = DockStyle.Fill;
                 panel3.Visible = true;
+                panel_ders.Visible = false;
+                panel_not.Visible = false;
                 sifre_getir(tb_sif);
                 tb_sif.Text = ogr_sif.ToString();
                 textBox1.Text = ogr_no;
@@ -89,7 +104,6 @@ namespace Görsel_Proje_OBS
             {
                 panel3.Visible = false;
                 panel3.Dock = DockStyle.None;
-
             }
         }
         private void button6_Click(object sender, EventArgs e)
@@ -113,11 +127,11 @@ namespace Görsel_Proje_OBS
                 login = cmd.ExecuteReader();
                 while (login.Read())
                 {
-
                     ogr_no = login["ogr_no"].ToString();
                     ogr_isim = login["ogr_isim"].ToString();
                     ogr_soyisim = login["ogr_soyisim"].ToString();
                     ogr_telefon = login["ogr_telefon"].ToString();
+                    ogr_sinif = login["sinif_no"].ToString();
                 }
                 baglan.Close();
                 login.Close();
@@ -134,8 +148,8 @@ namespace Görsel_Proje_OBS
         {
             baglan.Open();
 
-            MySqlCommand sql = new MySqlCommand("Select * from not_bilgi where ogr_no=@no",baglan);
-            sql.Parameters.AddWithValue("@no",ogr_no);
+            MySqlCommand sql = new MySqlCommand("SELECT  not_bilgi.not_no as 'Not no' ,ogr_bilgi.ogr_isim as 'Öğrenci Ad',ogr_bilgi.ogr_soyisim as 'Öğrenci Soyad', ders.ders_ad as 'Ders Ad', not_bilgi.not_not as 'Puan', not_t.not_ad as 'Türü' FROM(((obs.not_bilgi left JOIN ders ON not_bilgi.ders_no = ders.ders_no) left JOIN not_t ON not_bilgi.not_tur = not_t.not_no) left JOIN ogr_bilgi ON ogr_bilgi.ogr_no = not_bilgi.ogr_no) where not_bilgi.ogr_no=@no;", baglan);
+            sql.Parameters.AddWithValue("@no", ogr_no);
             MySqlDataAdapter da = new MySqlDataAdapter(sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -144,19 +158,34 @@ namespace Görsel_Proje_OBS
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            
-
             if (panel_not.Visible == false)
             {
                 panel_not.Dock = DockStyle.Fill;
                 panel_not.Visible = true;
+                panel3.Visible = false;
+                panel_ders.Visible = false;
                 not_getir();
             }
             else
             {
                 panel_not.Visible = false;
                 panel_not.Dock = DockStyle.None;
-
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (panel_ders.Visible == false)
+            {
+                panel_ders.Dock = DockStyle.Fill;
+                panel_ders.Visible = true;
+                panel_not.Visible = false;
+                panel3.Visible = false;
+                ders_program_getir();
+            }
+            else
+            {
+                panel_ders.Visible = false;
+                panel_ders.Dock = DockStyle.None;
             }
         }
 
@@ -173,6 +202,7 @@ namespace Görsel_Proje_OBS
         {
             try
             {
+
                 bilgiler(ogr_tc);
                 ad_tc_yazdır();
 

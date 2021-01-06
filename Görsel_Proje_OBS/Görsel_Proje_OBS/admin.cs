@@ -83,7 +83,7 @@ namespace Görsel_Proje_OBS
         public void not_getir()
         {
             baglan.Open();
-            MySqlCommand sql = new MySqlCommand("select * from not_bilgi", baglan);
+            MySqlCommand sql = new MySqlCommand("SELECT  not_bilgi.not_no as 'Not no' ,ogr_bilgi.ogr_isim as 'Öğrenci Ad',ogr_bilgi.ogr_soyisim as 'Öğrenci Soyad', ders.ders_ad as 'Ders Ad', not_bilgi.not_not as 'Puan', not_t.not_ad as 'Türü' FROM(((obs.not_bilgi left JOIN ders ON not_bilgi.ders_no = ders.ders_no) left JOIN not_t ON not_bilgi.not_tur = not_t.not_no) left JOIN ogr_bilgi ON ogr_bilgi.ogr_no = not_bilgi.ogr_no);", baglan);
             MySqlDataAdapter da = new MySqlDataAdapter(sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -336,6 +336,21 @@ namespace Görsel_Proje_OBS
         #endregion
         /***************************************/
         #region"Ders İşlemleri"
+        public int ogrt_id_bul()
+        {
+            int id = 0;
+
+            MySqlCommand sql = new MySqlCommand("select ogrt_no from ogrt_bilgi where ogrt_isim=@ad and ogrt_soyisim=@sad",baglan);
+            sql.Parameters.AddWithValue("@ad",ad);
+            sql.Parameters.AddWithValue("@sad",soyad);
+            MySqlDataReader dr = sql.ExecuteReader();
+            if (dr.Read())
+            {
+                id = int.Parse(dr["ogrt_no"].ToString());
+            }
+            dr.Close();
+            return id;
+        }
         public void ogrt_ad_getir()
         {
             cb_ders_ogretmen.Items.Clear();
@@ -368,7 +383,6 @@ namespace Görsel_Proje_OBS
                 }
                 else
                 {
-
                     soyad = isim.Trim();
                     break;
                 }
@@ -431,7 +445,7 @@ namespace Görsel_Proje_OBS
             baglan.Open();
             MySqlCommand sql = new MySqlCommand("Insert into ders (ders_ad,ogrt_no,sinif_no) values (@ders,@ogrt,@sinif);", baglan);
             sql.Parameters.AddWithValue("@ders", ad.Text);
-            sql.Parameters.AddWithValue("@ogrt", bolum_id_bul(ogrt));
+            sql.Parameters.AddWithValue("@ogrt", ogrt_id_bul());
             sql.Parameters.AddWithValue("@sinif", sinif_no_getir(sınıf));
             sql.ExecuteNonQuery();
             baglan.Close();
@@ -442,6 +456,16 @@ namespace Görsel_Proje_OBS
             baglan.Open();
 
             MySqlCommand sql = new MySqlCommand("Delete from ders where ders_no=@id", baglan);
+            sql.Parameters.AddWithValue("@id", id);
+            sql.ExecuteNonQuery();
+
+            baglan.Close();
+        }
+        public void not_sil(int id)
+        {
+            baglan.Open();
+
+            MySqlCommand sql = new MySqlCommand("Delete from not_bilgi where not_no=@id", baglan);
             sql.Parameters.AddWithValue("@id", id);
             sql.ExecuteNonQuery();
 
@@ -879,6 +903,13 @@ namespace Görsel_Proje_OBS
             {
                 timer2.Start();
             }
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            String sil_no = Interaction.InputBox("Silinecenk Notun Not_no'sunu giriniz", "Not Sil", "orn:5", 0, 0);
+            not_sil(int.Parse(sil_no));
+            not_getir();
         }
 
         private void button26_Click(object sender, EventArgs e)
