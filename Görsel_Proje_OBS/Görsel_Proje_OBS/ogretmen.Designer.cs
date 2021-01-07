@@ -52,7 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel_not = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.tb_not_not = new System.Windows.Forms.TextBox();
             this.cb_not_tur = new System.Windows.Forms.ComboBox();
@@ -296,7 +295,6 @@
             // 
             this.panel_not.BackColor = System.Drawing.Color.White;
             this.panel_not.Controls.Add(this.button8);
-            this.panel_not.Controls.Add(this.button7);
             this.panel_not.Controls.Add(this.button6);
             this.panel_not.Controls.Add(this.tb_not_not);
             this.panel_not.Controls.Add(this.cb_not_tur);
@@ -316,28 +314,19 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(833, 196);
+            this.button8.Location = new System.Drawing.Point(895, 167);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(121, 23);
+            this.button8.Size = new System.Drawing.Size(59, 23);
             this.button8.TabIndex = 9;
             this.button8.Text = "Ekle";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(886, 167);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(68, 23);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Güncelle";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(833, 167);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(47, 23);
+            this.button6.Size = new System.Drawing.Size(56, 23);
             this.button6.TabIndex = 9;
             this.button6.Text = "Sil";
             this.button6.UseVisualStyleBackColor = true;
@@ -399,9 +388,11 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(176, 53);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(583, 298);
             this.dataGridView1.TabIndex = 2;
             // 
@@ -479,7 +470,6 @@
         private System.Windows.Forms.ComboBox cb_not_ogr_ad;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
     }
 }
