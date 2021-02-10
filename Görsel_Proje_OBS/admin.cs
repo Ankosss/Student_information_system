@@ -869,9 +869,18 @@ namespace Görsel_Proje_OBS
 
         private void button27_Click(object sender, EventArgs e)
         {
-            ogr_ad_parcala(cb_not_ogr);
-            not_ekle(tb_not_not, cb_not_tur);
-            not_getir();
+            int not = int.Parse( tb_not_not.Text);
+            if (not <= 100)
+            {
+                ogr_ad_parcala(cb_not_ogr);
+                not_ekle(tb_not_not, cb_not_tur);
+                not_getir();
+            }
+            else
+            {
+                MessageBox.Show("Not 100'den fazla olamaz lütfen tekrar deneyiniz.");
+            }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
