@@ -4,3 +4,4 @@ v1.0: Öğrenci bilgi sistemi C# ile kodlandı içerisinde MySql kullanıldı. A
 v1.1: Admin panelinin %90'lık kısmı bitti sadece updateler kaldı, öğrenci formuna tekrardan başlandı not bilgi kısmı eklendi öğrenci artık hesap bilgileri üzerinden şifre değiştirebiliyor. Yapılacak olarak öğrenci not sayfasındadaki datagride tek tek sütunlar anlaşılır bir şekilde eklenicek ders id görmek yerine çektiğim bilgideki derin adını gösterilecek vb geliştirmeler yapılıcak.  
 v1.2: Admin panelinde ki güncelleme işlemleri harici herhangi bir eksik kalmamış durumda sql join işlemleri yapıldı test işlemleri yapılıcak full sürüm bir sonraki update ile eklenicektir.  
 v1.3: Eksikler düzeltildi buttonlara try-catch blokları harici bir şey kalmadı. Yakında veri tabanı dosyasıda eklenecektir.
+v1.4: Programın son hali eklenmiştir bütün hatalar ve eksiklikler düzeltilmiştir. veritabanı eklendi mysql formatındadır veritabanı MySQL workbench gibi programlara eklenerek kullanılabilir.
